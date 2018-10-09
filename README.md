@@ -1,2 +1,4 @@
-# Martin-Reseach-Group
-Codes that I used when I worked under Dr. Rebecca Martin
+# Dr. Martin Research Group
+Programs I made while under Dr. Rebecca Martin
+
+# Herculis 99
