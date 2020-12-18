@@ -16,7 +16,6 @@ int main()
                i.e.  a e I g n M, where
                 a = semi-major axis (in AU)
                 ^ Range from 70 to 200
-                Range from 1.5 to 4.1
                 e = eccentricity
                 ^ Range from 0 to .1
                 I = inclination (degrees)
@@ -28,43 +27,15 @@ int main()
   int name = 1;
   double a, e, I, g, n, M;
   int z; //, z2, z3;
-  int cycles = 1000;
+  int cycles = 10000;
   ofstream outfile;
   srand(unsigned(time(NULL)));
 
 //a=(double)rand()/(RAND_MAX)+0+(rand()%4);
   z = 0;//z2 = z3 = 0;
-  outfile.open("small1.in");
+  outfile.open("small.in");
   Finisher(outfile,name, cycles, a, e, I, g, n, M, z);
   outfile.close();
-  outfile.open("small2.in");
-  Finisher(outfile,name, cycles, a, e, I, g, n, M, z);
-  outfile.close();
-  outfile.open("small3.in");
-  Finisher(outfile,name, cycles, a, e, I, g, n, M, z);
-  outfile.close();
-  outfile.open("small4.in");
-  Finisher(outfile,name, cycles, a, e, I, g, n, M, z);
-  outfile.close();
-  outfile.open("small5.in");
-  Finisher(outfile,name, cycles, a, e, I, g, n, M, z);
-  outfile.close();
-  outfile.open("small6.in");
-  Finisher(outfile,name, cycles, a, e, I, g, n, M, z);
-  outfile.close();
-  outfile.open("small7.in");
-  Finisher(outfile,name, cycles, a, e, I, g, n, M, z);
-  outfile.close();
-  outfile.open("small8.in");
-  Finisher(outfile,name, cycles, a, e, I, g, n, M, z);
-  outfile.close();
-  outfile.open("small9.in");
-  Finisher(outfile,name, cycles, a, e, I, g, n, M, z);
-  outfile.close();
-  outfile.open("small10.in");
-  Finisher(outfile,name, cycles, a, e, I, g, n, M, z);
-  outfile.close();
-
 
 
 
@@ -105,14 +76,7 @@ void Finisher(ofstream& outfile, int& num, int cycles, double a, double e, doubl
   outfile << ")---------------------------------------------------------------------"  << endl;
   while(cycles != 0)
 {
-  a=(double)rand()/(RAND_MAX)+1+(rand()%4);
-  if(a < 1.5|| a>4.1){
-    do {
-      a=(double)rand()/(RAND_MAX)+1+(rand()%4);
-    }
-    while (a < 1.5|| a>4.1);
-  }
-
+  a=(double)rand()/(RAND_MAX)+70+(rand()%120);
 //cout << "a "<< a << endl;
 //if(e > 0.1)
   e = ((double)rand())/(RAND_MAX)/10;
